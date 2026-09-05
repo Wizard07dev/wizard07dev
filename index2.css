@@ -1,0 +1,249 @@
+/* CSS for second page of website */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Inter', sans-serif; 
+} 
+
+body { 
+    background-color: #EDE9E2; 
+    color: #2B2A27; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    max-width: 500px; 
+    margin: 0 auto; 
+    padding: 60px 24px; 
+} 
+
+header { 
+    width: 100%; 
+} 
+
+header img { 
+    width: 140px; 
+    height: 140px; 
+    border-radius: 28px; 
+    object-fit: cover; 
+    object-position: top; 
+    margin-bottom: 24px; 
+} 
+
+h1 { 
+    font-size: 2.6rem; 
+    font-weight: 700; 
+    letter-spacing: -2.5px; 
+    margin-bottom: 4px; 
+} 
+
+h2 { 
+    font-size: 0.75rem; 
+    font-weight: 600; 
+    letter-spacing: 2px; 
+    color: #7A7873; 
+    text-transform: uppercase; 
+    margin-bottom: 40px; 
+} 
+
+h3 { 
+    font-size: 1.4rem; 
+    font-weight: 400; 
+    line-height: 1.4; 
+    margin-bottom: 32px; 
+} 
+
+h4 { 
+    width: 100%; 
+    font-size: 0.75rem; 
+    font-weight: 600; 
+    letter-spacing: 1.5px; 
+    color: #7A7873; 
+    text-transform: uppercase; 
+    border-bottom: 1px solid #D6D1C4; 
+    padding-bottom: 24px; 
+    margin-bottom: 32px; 
+} 
+
+.projects-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.project-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.project-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+}
+
+.project-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #2B2A27;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.project-title:hover {
+    color: #7A7873;
+}
+
+.project-tech {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: #A3A096;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.project-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #7A7873;
+}
+
+.back-link-container { 
+    width: 100%; 
+    margin-top: 56px; 
+    border-top: 1px solid #D6D1C4; 
+    padding-top: 24px; 
+} 
+
+.back-link { 
+    text-decoration: none; 
+    font-size: 0.9rem; 
+    font-weight: 600; 
+    color: #2B2A27; 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 6px; 
+    transition: color 0.25s ease; 
+} 
+
+.back-link .arrow { 
+    display: inline-block; 
+    transition: transform 0.25s ease; 
+} 
+
+.back-link:hover { 
+    color: #7A7873; 
+} 
+
+.back-link:hover .arrow { 
+    transform: translateX(-4px); 
+}
+
+/* Javascript implimentation for fade in effect on scroll */
+
+body {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+body.page-loaded {
+    opacity: 1;
+}
+
+.reveal-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.215, 0.610, 0.355, 1), 
+                transform 0.6s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.reveal-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Dark mode switch */
+body.dark-mode {
+    background-color: #1A1917;
+    color: #E2DFD8;
+}
+
+body.dark-mode h2, 
+body.dark-mode h4,
+body.dark-mode .platform-name,
+body.dark-mode .language-label,
+body.dark-mode .future-major-label,
+body.dark-mode .project-tech,
+body.dark-mode .project-description {
+    color: #9C9A93;
+}
+
+body.dark-mode h4,
+body.dark-mode .work-link-container,
+body.dark-mode .back-link-container {
+    border-color: #383733;
+}
+
+body.dark-mode .socials-container a,
+body.dark-mode .project-title {
+    color: #9C9A93;
+}
+
+body.dark-mode .socials-container a:hover,
+body.dark-mode .work-link,
+body.dark-mode .back-link,
+body.dark-mode .project-title:hover {
+    color: #E2DFD8;
+}
+
+.theme-toggle-btn {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #7A7873;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: color 0.25s ease;
+}
+body.dark-mode .theme-toggle-btn {
+    color: #9C9A93;
+}
+.theme-toggle-btn:hover {
+    color: #2B2A27;
+}
+body.dark-mode .theme-toggle-btn:hover {
+    color: #E2DFD8;
+}
+
+/* local time and blinking dot for activity status */
+.status-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: #7A7873;
+    margin-bottom: 32px;
+}
+body.dark-mode .status-row {
+    color: #9C9A93;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #28a745;
+    border-radius: 50%;
+    animation: blink 2s infinite ease-in-out;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
